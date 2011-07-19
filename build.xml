@@ -1,13 +1,15 @@
 <project default="all">
-  <property name="source-directory" location="." />
+  <property name="lib-directory" location="./lib" />
+  <property name="tests-directory" location="./tests" />
 
   <path id="CLASSPATH">
     <pathelement location="/Users/stephenwalker/Projects/junit/junit-4.9b2.jar" />
-    <pathelement location="${source-directory}" />
+    <pathelement location="${lib-directory}" />
+    <pathelement location="${tests-directory}" />
   </path>
 
   <target name="compile">
-    <javac srcdir="${source-directory}"
+    <javac srcdir="${lib-directory}"
            includeantruntime="false" >
       <classpath refid="CLASSPATH"/>
     </javac>
@@ -15,7 +17,8 @@
 
   <target name="clean-up">
     <delete>
-      <fileset dir="${source-directory}" includes="**/*.class" />
+      <fileset dir="${lib-directory}" includes="**/*.class" />
+      <fileset dir="${tests-directory}" includes="**/*.class" />
     </delete>
   </target>
 
