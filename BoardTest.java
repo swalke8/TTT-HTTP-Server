@@ -40,7 +40,7 @@ public class BoardTest extends TestCase {
     myBoard.setValueAt(position1, 1);
     myBoard.setValueAt(position2, -1);
 
-    int rowSums[] = new int[3];
+    int[] rowSums = new int[3];
     rowSums[0] = 1; rowSums[1] = 0; rowSums[2] = -1;
     for(int i = 0; i < 3; i++)
       assertEquals(myBoard.arrayOfRowSums()[i], rowSums[i]);
@@ -50,7 +50,7 @@ public class BoardTest extends TestCase {
     myBoard.setValueAt(position1, 1);
     myBoard.setValueAt(position2, -1);
     
-    int columnSums[] = new int[3];
+    int[] columnSums = new int[3];
     columnSums[0] = 1; columnSums[1] = 0; columnSums[2] = -1;
     for(int i = 0; i < 3; i++)
       assertEquals(myBoard.arrayOfColumnSums()[i], columnSums[i]);

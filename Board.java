@@ -38,14 +38,14 @@ public class Board {
   }
 
   public int[] arrayOfRowSums() {
-    int rowSums[] = new int[3];
+    int[] rowSums = new int[3];
     for(int row = 0; row < 3; row++)
       rowSums[row] = rowValue(row);
     return rowSums;
   }
 
   public int[] arrayOfColumnSums() {
-    int columnSums[] = new int[3];
+    int[] columnSums = new int[3];
     for(int column = 0; column < 3; column++)
       columnSums[column] = columnValue(column);
     return columnSums;
@@ -66,7 +66,7 @@ public class Board {
   }
 
   private void initializeBoard() {
-    for(int row[] : gameBoard)
+    for(int[] row : gameBoard)
       for(int column : row)
         column = 0;
   }
