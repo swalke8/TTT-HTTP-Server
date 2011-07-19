@@ -4,10 +4,11 @@ public class HumanPlayerTest extends TestCase {
 
   Board myBoard = new Board();
   GameObserver observer = new GameObserver(myBoard);
-  IO testOutput = new MockIO();
-  Player testPlayer = new HumanPlayer(myBoard, testOutput);
+  MockIO testOutput = new MockIO();
+  HumanPlayer testPlayer = new HumanPlayer(myBoard, testOutput);
 
   public void testUserGetsPrompted() throws Exception {
-    assertEquals(true, true);
+    testPlayer.promptForMove();
+    assertEquals(testOutput.getOutputString(), "Please Enter a Row Value [1-3]:");
   }
 }

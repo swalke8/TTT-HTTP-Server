@@ -6,4 +6,7 @@ class HumanPlayer extends Player {
 
   public boolean makeMove(Position position) {return true;}
   public void getMove() {}
+  public void promptForMove() {
+    ioStream.print("Please Enter a Row Value [1-3]:");
+  }
 }
