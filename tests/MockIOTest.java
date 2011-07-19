@@ -7,4 +7,10 @@ public class MockIOTest extends TestCase {
     IOStream.print("Hello World!");
     assertEquals(IOStream.getOutputString(), "Hello World!");
   }
+
+  public void testStoresInput() throws Exception {
+    String testInput = new String("Stephen");
+    IOStream.read(testInput);
+    assertEquals(IOStream.getInputString(), "Stephen");
+  }
 }

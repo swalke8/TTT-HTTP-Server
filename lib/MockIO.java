@@ -11,10 +11,15 @@ class MockIO extends IO {
   }
 
   public void read(String input) {
+    inputString = inputString.concat(input);
   }
 
   public void print(String output) {
     outputString = outputString.concat(output);
+  }
+
+  public String getInputString() {
+    return inputString;
   }
 
   public String getOutputString() {
