@@ -8,6 +8,6 @@ public class HumanPlayerTest extends TestCase {
   Player testPlayer = new HumanPlayer(myBoard, testOutput);
 
   public void testUserGetsPrompted() throws Exception {
-
+    assertEquals(true, true);
   }
 }

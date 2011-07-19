@@ -28,6 +28,8 @@
       <formatter type="brief" usefile="false" />
       <test name="BoardTest" />
       <test name="GameObserverTest" />
+      <test name="HumanPlayerTest" />
+      <test name="MockIOTest" />
     </junit>
   </target>
 
