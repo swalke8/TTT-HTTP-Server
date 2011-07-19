@@ -1,4 +1,4 @@
 abstract class IO {
-  abstract void getInput(String input);
+  abstract void read(String input);
   abstract void print(String input);
 }

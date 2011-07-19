@@ -1,9 +1,10 @@
 import junit.framework.TestCase;
 
 public class MockIOTest extends TestCase {
-  IO IOStream = new MockIO();
+  MockIO IOStream = new MockIO();
 
-  public void testOne() throws Exception {
-    assertEquals(true, true);
+  public void testStoresOutput() throws Exception {
+    IOStream.print("Hello World!");
+    assertEquals(IOStream.getOutputString(), "Hello World!");
   }
 }

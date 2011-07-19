@@ -2,16 +2,22 @@ import java.util.*;
 
 class MockIO extends IO {
 
-  private List<String> inputList;
-  private List<String> outputList;
+  private String inputString;
+  private String outputString;
 
   public MockIO() {
-    inputList = new ArrayList<String>();
-    outputList = new ArrayList<String>();
+    inputString = new String();
+    outputString = new String();
   }
 
-  public void getInput(String input) {}
+  public void read(String input) {
+  }
 
-  public void print(String output) {}
+  public void print(String output) {
+    outputString = outputString.concat(output);
+  }
 
+  public String getOutputString() {
+    return outputString;
+  }
 }
