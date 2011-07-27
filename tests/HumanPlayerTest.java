@@ -10,7 +10,7 @@ public class HumanPlayerTest extends TestCase {
   Queue<String> inputArray = new LinkedList<String>();
 
   public void testUserGetsPromptedRow() throws Exception {
-    testPlayer.promptForMove();
+    testPlayer.promptForMove("Row");
     assertTrue(testIO.getOutputString().contains("Please Enter a Row Value [1-3]:"));
   }
 
@@ -23,9 +23,14 @@ public class HumanPlayerTest extends TestCase {
   public void testRepromptIfInvalid() throws Exception {
     inputArray.add("5");
     inputArray.add("3");
+    inputArray.add("1");
+    inputArray.add("2");
     testIO.setInput(inputArray);
     testPlayer.makeMove();
-    assertEquals("Please Enter a Row Value [1-3]:Please Enter a Row Value [1-3]:", testIO.getOutputString());
-    assertEquals("53", testIO.getInputString());
+    assertEquals("Please Enter a Row Value [1-3]:" +
+                 "Please Enter a Column Value [1-3]:" +
+                 "Please Enter a Row Value [1-3]:" +
+                 "Please Enter a Column Value [1-3]:", testIO.getOutputString());
+    assertEquals("5312", testIO.getInputString());
   }
 }

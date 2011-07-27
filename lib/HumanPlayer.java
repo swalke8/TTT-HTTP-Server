@@ -4,17 +4,25 @@ class HumanPlayer extends Player {
     super(board, io);
   }
 
-  public boolean makeMove() {
+  public void makeMove() {
     do {
-      promptForMove();
+      promptForMove("Row");
       move.setRow(getMove());
-    } while (move.row() > 3);
-    return true;
+      promptForMove("Column");
+      move.setColumn(getMove());
+    } while (invalidMove());
   }
+
   public int getMove() {
     return Integer.parseInt(ioStream.read());
   }
-  public void promptForMove() {
-    ioStream.print("Please Enter a Row Value [1-3]:");
+
+  public void promptForMove(String rowOrColumn) {
+    ioStream.print("Please Enter a " + rowOrColumn + " Value [1-3]:");
+  }
+
+  private boolean invalidMove() {
+    return (move.row() < 1 || move.row() > 3 ||
+            move.column() < 1 || move.column() > 3);
   }
 }
