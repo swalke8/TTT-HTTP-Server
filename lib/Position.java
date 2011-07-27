@@ -20,4 +20,12 @@ public class Position {
   public int column() {
     return column;
   }
+
+  public void setRow(int rowValue) {
+    row = rowValue;
+  }
+
+  public void setColumn(int columnValue) {
+    column = columnValue;
+  }
 }

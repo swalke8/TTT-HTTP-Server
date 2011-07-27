@@ -1,4 +1,5 @@
 import junit.framework.TestCase;
+import java.util.*;
 
 public class MockIOTest extends TestCase {
   MockIO IOStream = new MockIO();
@@ -9,8 +10,9 @@ public class MockIOTest extends TestCase {
   }
 
   public void testStoresInput() throws Exception {
-    String testInput = new String("Stephen");
-    IOStream.read(testInput);
-    assertEquals(IOStream.getInputString(), "Stephen");
+    Queue<String> testInput = new LinkedList<String>();
+    testInput.add("Stephen");
+    IOStream.setInput(testInput);
+    assertEquals(IOStream.read(), "Stephen");
   }
 }

@@ -1,11 +1,13 @@
 <project default="all">
   <property name="lib-directory" location="./lib" />
   <property name="tests-directory" location="./tests" />
+  <property name="src-directory" location="./src" />
 
   <path id="CLASSPATH">
     <pathelement location="/Users/stephenwalker/Projects/junit/junit-4.9b2.jar" />
     <pathelement location="${lib-directory}" />
     <pathelement location="${tests-directory}" />
+    <pathelement location="${src-directory}" />
   </path>
 
   <target name="compile">
@@ -17,12 +19,21 @@
            includeantruntime="false" >
       <classpath refid="CLASSPATH"/>
     </javac>
+    <!--
+    <javac srcdir="${src-directory}"
+           includeantruntime="false" >
+      <classpath refid="CLASSPATH"/>
+    </javac>
+    -->
   </target>
 
   <target name="clean-up">
     <delete>
       <fileset dir="${lib-directory}" includes="**/*.class" />
       <fileset dir="${tests-directory}" includes="**/*.class" />
+      <!--
+           <fileset dir="${src-directory}" includes="**/*.class" />
+      -->
     </delete>
   </target>
 
@@ -34,6 +45,9 @@
       <test name="GameObserverTest" />
       <test name="HumanPlayerTest" />
       <test name="MockIOTest" />
+      <!--
+           <test name="SocketServiceTest" />
+      -->
     </junit>
   </target>
 
