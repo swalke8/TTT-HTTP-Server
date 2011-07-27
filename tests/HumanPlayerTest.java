@@ -12,14 +12,14 @@ public class HumanPlayerTest extends TestCase {
   public void testUserGetsPromptedRow() throws Exception {
     inputArray.add("1");
     testIO.setInput(inputArray);
-    testPlayer.promptForMove();
+    testPlayer.makeMove();
     assertTrue(testIO.getOutputString().contains("Please Enter a Row Value [1-3]:"));
   }
 
   public void testUserMoveReceived() throws Exception {
     inputArray.add("2");
     testIO.setInput(inputArray);
-    testPlayer.getMove();
+    testPlayer.makeMove();
     assertEquals("2", testIO.getInputString());
   }
 
@@ -27,7 +27,7 @@ public class HumanPlayerTest extends TestCase {
     inputArray.add("5");
     inputArray.add("3");
     testIO.setInput(inputArray);
-    testPlayer.promptForMove();
+    testPlayer.makeMove();
     assertEquals("Please Enter a Row Value [1-3]:Please Enter a Row Value [1-3]:", testIO.getOutputString());
     assertEquals("53", testIO.getInputString());
   }

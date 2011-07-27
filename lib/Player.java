@@ -8,6 +8,6 @@ abstract class Player {
     ioStream = io;
   }
 
-  abstract boolean makeMove(Position position);
+  abstract boolean makeMove();
   abstract int getMove();
 }
