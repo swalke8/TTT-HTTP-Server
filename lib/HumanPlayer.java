@@ -22,7 +22,6 @@ class HumanPlayer extends Player {
   }
 
   private boolean invalidMove() {
-    return (move.row() < 1 || move.row() > 3 ||
-            move.column() < 1 || move.column() > 3);
+    return (move.invalidRow() || move.invalidColumn());
   }
 }

@@ -28,4 +28,12 @@ public class Position {
   public void setColumn(int columnValue) {
     column = columnValue;
   }
+
+  public boolean invalidRow() {
+    return (row < 1 || row > 3);
+  }
+
+  public boolean invalidColumn() {
+    return (column < 1 || column > 3);
+  }
 }
