@@ -7,10 +7,18 @@ class HumanPlayer extends Player {
   public void makeMove() {
     do {
       promptForMove("Row");
-      move.setRow(getMove());
+      getRow();
       promptForMove("Column");
-      move.setColumn(getMove());
+      getColumn();
     } while (invalidMove());
+  }
+
+  public void getRow() {
+    move.setRow(getMove());
+  }
+
+  public void getColumn() {
+    move.setColumn(getMove());
   }
 
   public int getMove() {
